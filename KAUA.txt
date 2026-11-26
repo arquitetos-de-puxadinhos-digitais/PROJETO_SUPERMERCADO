@@ -1,0 +1,27 @@
+CREATE TABLE categorias(
+    nome VARCHAR(100) NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY);
+
+
+CREATE TABLE marca(
+    
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL);
+
+
+CREATE TABLE produtos (
+    id  INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR (100) NOT NULL,
+    categorias_id INT NOT NULL,
+    
+    FOREIGN KEY(categorias_id) REFERENCES categorias(id),
+    marca_id  INT NOT NULL,
+     FOREIGN KEY(marca_id) REFERENCES marca(id),
+    preco DECIMAL(10,2) NOT NULL);
+
+
+    CREATE TABLE promoções( 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR (100) NOT NULL,
+    data_inicio DATE, 
+    data_fim DATE);
