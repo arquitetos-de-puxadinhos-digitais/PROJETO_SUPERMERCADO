@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------------
+TABELA FUNCIONÁRIOS
+--------------------------------------------------------------------------------------------
+CREATE TABLE funcionarios(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR (100) NOT NULL,
+    cargo INT NOT NULL,
+    turno_id INT NOT NULL,
+ 
+    	FOREIGN KEY(cargo)
+    		REFERENCES cargos(id),
+    
+    	FOREIGN KEY(turno_id)
+    		REFERENCES turnos(id)    
+);
+--------------------------------------------------------------------------------------------
+TABELA CLIENTES
+--------------------------------------------------------------------------------------------
+CREATE TABLE clientes(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    cpf VARCHAR(14) UNIQUE NOT NULL
+);
+--------------------------------------------------------------------------------------------
+TABELA TURNO
+--------------------------------------------------------------------------------------------
+CREATE TABLE turnos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    horario VARCHAR(50)
+);
+--------------------------------------------------------------------------------------------
+TABELA VENDAS
+--------------------------------------------------------------------------------------------
+CREATE TABLE vendas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_venda DATETIME,
+    valor_total DECIMAL(10,2) NOT NULL,
+    funcionario_id INT NOT NULL,
+    
+    	FOREIGN KEY (funcionario_id)
+    		REFERENCES funcionarios(id)
+    
+);
