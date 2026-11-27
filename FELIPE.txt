@@ -1,0 +1,63 @@
+=========================================
+CRIANDO TABELA CARGO
+=========================================
+
+CREATE TABLE cargo(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    cargo VARCHAR(100) NOT NULL
+);
+
+=========================================
+CRIANDO TABELA ITENS_COMPRA
+=========================================
+
+CREATE TABLE itens_compra (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    compra_id INT,
+    produto_id INT,
+    quantidade INT NOT NULL,
+    preco_unitario DECIMAL(10, 2) NOT NULL,
+    
+    FOREIGN KEY (compra_id)
+    REFERENCES compras(id),
+    
+    FOREIGN KEY (produto_id)
+    REFERENCES produtos(id)
+);
+
+=========================================
+CRIANDO TABELA RECEBIMENTOS
+=========================================
+
+CREATE TABLE recebimentos (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    compra_id INT,
+    funcionario_id INT,
+    data_recebimento DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (compra_id)
+    REFERENCES compras(id),
+    
+    FOREIGN KEY (funcionario_id)
+    REFERENCES funcionarios(id)
+);
+
+=========================================
+CRIANDO TABELA MOVIMENTACAO_ESTOQUE
+=========================================
+
+CREATE TABLE movimentacao_estoque (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    promocao_id INT,
+    funcionario_id INT,
+    tipo VARCHAR(30),
+    quantidade INT, 
+    data_movimento DATETIME,
+    
+    FOREIGN KEY (promocao_id)
+    REFERENCES promoções(id),
+    
+    FOREIGN KEY (funcionario_id)
+    REFERENCES funcionarios(id)
+);
+
