@@ -25,3 +25,51 @@ CREATE TABLE produtos (
     nome VARCHAR (100) NOT NULL,
     data_inicio DATE, 
     data_fim DATE);
+
+    INSERT INTO:
+
+    INSERT INTO categorias (nome) VALUES
+('Alimentos'),
+('Bebidas'),
+('Higiene Pessoal'),
+('Limpeza'),
+('Hortifruti'),
+('Laticínios'),
+('Padaria'),
+('Carnes');
+
+INSERT INTO marca (nome) VALUES
+('Nestlé'),
+('Coca-Cola'),
+('Dove'),
+('Omo'),
+('Del Valle'),
+('Itambé'),
+('Pullman'),
+('Sadia'),
+('Ypê'),
+('Nivea'),
+('Nescau'),
+('Garoto'),
+('láctea'),
+('Pepsi'),
+('Fanta'),
+('Sprite'),
+('Guaraná Antarctica');
+
+INSERT INTO produtos (nome, categorias_id, marca_id, preco) VALUES
+('Arroz 5kg', 1, 1, 25.90),
+('Feijão 1kg', 1, 1, 8.50),
+('Macarrão 500g', 1, 1, 5.99),
+('Coca-Cola 2L', 2, 2, 10.99),
+('Suco Del Valle 1L', 2, 5, 7.50),
+('Sabonete Dove', 3, 3, 4.99),
+('Detergente Ypê 500ml', 4, 9, 2.49),
+('Leite Itambé 1L', 6, 6, 5.49),
+('Pão de forma Pullman', 7, 7, 8.99),
+('Frango Sadia 1kg', 8, 8, 18.90),
+('Cereal Nescau', 1, 1, 12.50),
+('Shampoo Nivea', 3, 10, 15.90),
+('Óleo de soja 900ml', 1, 1, 7.99),
+('Água mineral 1,5L', 2, 2, 3.49),
+('Amaciante Omo 2L', 4, 4, 12.90);
