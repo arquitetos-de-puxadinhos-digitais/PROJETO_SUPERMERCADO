@@ -26,6 +26,37 @@ CREATE TABLE produtos (
     data_inicio DATE, 
     data_fim DATE);
 
+
+
+CREATE TABLE itens_vendas(
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+    quantidade INT,
+    preco_unitario DECIMAL (10,2),
+    vendas_id INT,
+    FOREIGN KEY(vendas_id) REFERENCES categorias(id),
+     produtos_id INT,
+FOREIGN KEY(produtos_id) REFERENCES produtos(id)
+);
+
+
+CREATE TABLE forma_pagamento(
+id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE pagamentos(
+id INT AUTO_INCREMENT PRIMARY KEY,
+ valor DECIMAL(10,2),
+    data_pagamento DATETIME,
+       vendas_id INT,
+    FOREIGN KEY(vendas_id) REFERENCES categorias(id),
+       forma_pagamento_id INT,
+    FOREIGN KEY(forma_pagamento_id) REFERENCES forma_pagamento(id)
+    );
+    
+
+
     INSERT INTO:
 
     INSERT INTO categorias (nome) VALUES
