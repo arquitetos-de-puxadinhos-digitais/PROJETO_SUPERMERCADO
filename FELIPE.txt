@@ -1,15 +1,8 @@
-=========================================
-CRIANDO TABELA CARGO
-=========================================
 
 CREATE TABLE cargo(
 	id INT AUTO_INCREMENT PRIMARY KEY,
     cargo VARCHAR(100) NOT NULL
 );
-
-=========================================
-CRIANDO TABELA ITENS_COMPRA
-=========================================
 
 CREATE TABLE itens_compra (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,10 +18,6 @@ CREATE TABLE itens_compra (
     REFERENCES produtos(id)
 );
 
-=========================================
-CRIANDO TABELA RECEBIMENTOS
-=========================================
-
 CREATE TABLE recebimentos (
 	id INT AUTO_INCREMENT PRIMARY KEY,
     compra_id INT,
@@ -42,9 +31,6 @@ CREATE TABLE recebimentos (
     REFERENCES funcionarios(id)
 );
 
-=========================================
-CRIANDO TABELA MOVIMENTACAO_ESTOQUE
-=========================================
 
 CREATE TABLE movimentacao_estoque (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -61,3 +47,29 @@ CREATE TABLE movimentacao_estoque (
     REFERENCES funcionarios(id)
 );
 
+INSERT INTO turnos (nome, horario) VALUES
+('Manhã', '07:00 às 12:00'),
+('Tarde', '13:00 às 18:00'),
+('Noite', '19:00 às 22:00');
+
+INSERT INTO cargos (cargo) VALUES
+('Gerente'),
+('Subgerente'),
+('Operador de Caixa'),
+('Fiscal de Caixa'),
+('Repositor'),
+('Estoquista'),
+('Açougueiro'),
+('Padeiro'),
+('Confeiteiro'),
+('Balconista'),
+('Atendente'),
+('Empacotador'),
+('Conferente'),
+('Auxiliar de Limpeza'),
+('Segurança'),
+('Entregador'),
+('Comprador'),
+('Auxiliar Administrativo'),
+('Recursos Humanos'),
+('Supervisor de Vendas');
